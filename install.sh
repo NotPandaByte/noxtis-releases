@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # Noxtis installer for Linux (x86_64).
 #
-#   curl -fsSL https://raw.githubusercontent.com/NotPandaByte/noxtis/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/NotPandaByte/noxtis-releases/main/install.sh | bash
 #
 # Downloads the latest AppImage from GitHub releases into ~/.local/share/noxtis,
 # links it as ~/.local/bin/noxtis, and adds a desktop entry. Re-run to update
 # (the app also updates itself from Settings once installed).
 set -euo pipefail
 
-REPO="NotPandaByte/noxtis"
+REPO="NotPandaByte/noxtis-releases"
 DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}"
 APP_DIR="$DATA_DIR/noxtis"
 BIN_DIR="$HOME/.local/bin"
@@ -50,7 +50,7 @@ fi
 icon_dir="$DATA_DIR/icons/hicolor/128x128/apps"
 mkdir -p "$icon_dir" "$DATA_DIR/applications"
 curl -fsSL -o "$icon_dir/noxtis.png" \
-  "https://raw.githubusercontent.com/$REPO/main/editor/src-tauri/icons/128x128.png" || true
+  "https://raw.githubusercontent.com/$REPO/main/noxtis.png" || true
 cat > "$DATA_DIR/applications/noxtis.desktop" <<EOF
 [Desktop Entry]
 Name=Noxtis
